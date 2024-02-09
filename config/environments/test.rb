@@ -64,4 +64,6 @@ Rails.application.configure do
 
   # Reduce log spam.
   config.log_level = :warn
+
+  config.cache_classes = false
 end

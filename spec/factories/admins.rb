@@ -1,23 +1,7 @@
 FactoryBot.define do
-  factory :normal_admin, class: 'Admin' do
-    sequence(:name) { |n| "normal#{n}" }
+  factory :admin, class: 'Admin' do
     sequence(:email) { |n| "normal#{n}@test.com" }
     password { 'password' }
-    status { 0 }
-  end
-
-  factory :withdrawn_admin, class: 'Admin' do
-    sequence(:name) { |n| "withdrawn#{n}" }
-    sequence(:email) { |n| "withdrawn#{n}@test.com" }
-    password { 'password' }
-    status { 1 }
-  end
-
-  factory :banned_admin, class: 'Admin' do
-    sequence(:name) { |n| "banned#{n}" }
-    sequence(:email) { |n| "banned#{n}@test.com" }
-    password { 'password' }
-    status { 2 }
   end
 end
 

@@ -88,6 +88,12 @@ services:
       - "${DOCKER_WEB_PORT_FORWARD:-127.0.0.1:8000}:${PORT:-8000}"
     profiles: ["web"]
 
+  selenium_chrome:
+    image: "selenium/standalone-chrome:4.18.0-20240220"
+    shm_size: '2gb'
+    ports:
+      - "4444:4444"
+
   worker:
     <<: *default-app
     command: "bundle exec sidekiq -C config/sidekiq.yml"

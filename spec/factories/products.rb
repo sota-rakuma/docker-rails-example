@@ -4,6 +4,9 @@ FactoryBot.define do
     sequence(:description) { |n| "this is No.#{n}" }
     sequence(:price) { |n| (n * rand(1000)).to_s }
     sequence(:stock) { |n| (n * rand(100)).to_s }
+    after(:build) do |product|
+      product.image.attach(io: File.open('spec/fixtures/wow.jpg'), filename: 'wow.jpg', content_type: 'image/jpeg')
+    end
   end
 end
 

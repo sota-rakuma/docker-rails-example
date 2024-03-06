@@ -6,3 +6,9 @@ FactoryBot.define do
     sequence(:stock) { |n| (n * rand(100)).to_s }
   end
 end
+
+def create_products(times: 5)
+  times.times do
+    FactoryBot.create(:product)
+  end
+end

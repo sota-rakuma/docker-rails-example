@@ -10,6 +10,7 @@ RSpec.describe 'Admins', type: :system, js: true do
         fill_in 'admin[email]', with: admin.email
         fill_in 'admin[password]', with: admin.password
         find('form#new_admin input[name=commit][type=submit]').click
+        expect(page).to have_content('Signed in successfully.')
       end
     end
   end

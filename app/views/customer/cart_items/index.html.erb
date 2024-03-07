@@ -1,0 +1,11 @@
+<div class="mb-8 text-center">
+  <span class="text-3xl font-bold">
+    Shopping Cart
+  </span>
+</div>
+
+<% if @cart_items.count == 0 %>
+  <%= render "new_cart_item" %>
+<% else %>
+  <%= render 'table_cart_item' %>
+<% end %>

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Admin::ProductsController' do # rubocop:disable Metrics/BlockLength
+describe 'Admin::ProductsController' do
   before do
     create_products
   end

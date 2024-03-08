@@ -5,7 +5,7 @@
 </div>
 
 <% if @cart_items.count == 0 %>
-  <%= render "new_cart_item" %>
+  <%= render "customer/shared/leading_to_shopping", object: 'Products' %>
 <% else %>
   <%= render 'table_cart_item' %>
 <% end %>

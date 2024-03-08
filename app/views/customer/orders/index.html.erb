@@ -1,0 +1,19 @@
+<div class="mb-6 text-center">
+  <span class="text-3xl font-bold">
+    Order Histories
+  </span>
+</div>
+
+<% if @orders.count == 0 %>
+  <%= render 'customer/shared/leading_to_shopping', object: 'History' %>
+<% else %>
+  <div class="w-full px-3">
+    <div class="shadow-soft-xl rounded-2xl bg-clip-border w-full lg:w-3/5 flex  mx-auto">
+      <div class="w-full">
+        <ul class="rounded-lg">
+          <%= render @orders %>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>

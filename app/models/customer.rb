@@ -15,7 +15,7 @@ class Customer < ApplicationRecord
     banned: 2
   }
   has_many :cart_items, dependent: :destroy
-  has_many :order, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   def line_items_checkout # rubocop:disable Metrics/MethodLength
     cart_items.map do |cart_item|

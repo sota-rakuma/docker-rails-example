@@ -4,7 +4,9 @@ class Customer::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by(id: params[:id])
+    return redirect_to products_path if @product.nil?
+
     @cart_item = CartItem.new
   end
 

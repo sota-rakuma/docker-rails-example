@@ -36,7 +36,8 @@ class Customer::WebhooksController < ApplicationController
           create_order_details(order, line_item) # 取り出したline_itemをorder_detailsテーブルに登録
         end
       end
-      customer.cart_items.destroy_all # 顧客のカート内商品を全て削除
+      customer.cart_items.destroy_all
+      OrderMailer.complete(email: session.customer_details.email).deliver_now
       redirect_to session.success_url
     end
   end
